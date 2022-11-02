@@ -4,11 +4,39 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haider Webpack</title>
+  <title>To Do List Project</title>
+  <!-- Fontawesome cdn -->
+  <script src="https://kit.fontawesome.com/27219c429c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1 class="hello">Webpack</h1>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, aperiam soluta odio magni suscipit non reiciendis velit minima ullam ex!</p>
-  <p>Haider</p>
+  <main>
+    <header>
+      <h4>Today's To Do <span id="recycle"><i class="fa-solid fa-arrow-rotate-left"></i></span></h4>
+    </header>
+    <div class="task-wrapper">
+      <form action="" method="GET" id="tast-form">
+        <input type="text" id="task" placeholder="Add to your list...">
+        <button id="enter-btn" class="btn"><i class="fa-solid fa-arrow-left-long"></i></button>
+        <!-- Task List -->
+        <ul class="nav">
+          <li>
+            <input type="checkbox" id="index">
+            <p>wash the dishes</p>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </li>
+          <li>
+            <input type="checkbox" id="index">
+            <p>wash the dishes</p>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </li>
+          <li>
+            <input type="checkbox" id="index">
+            <p>wash the dishes</p>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
