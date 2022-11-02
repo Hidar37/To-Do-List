@@ -36,7 +36,7 @@ const showToDoList = () => {
     removeBtn.addEventListener('click', () => {
       toDoList.splice(position, 1);
       liElement.remove();
-      // window.location.reload();
+      window.location.reload();
     });
     // 1- Append New Element to Parent node which is li.
     // 2- Than append the li to ul.

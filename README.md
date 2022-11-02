@@ -1,7 +1,8 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
 # To Do List Project
 
 > This is simple to do list project which is under building. For now there is no functionlity to use.
-
 
 ## Built With
 
@@ -9,11 +10,44 @@
 - CSS
 - JS
 
+## Live Demo
+
+> coming soon :smile:
+
+[Link](Coming Soon)
+
+## Setup&Install
+
+`1- To have a copy of this project running on your local machine, follow these Steps:`
+
+- Clone this repo to your local machine
+  - `https://github.com/Hidar37/To-Do-List.git`
+  - Open the folder "To-Do-List" and run `npm install` to install all necesary scripts,
+  - Run from your termminal, `npm start` to open the project in your browser.
+
+### Prerequisites
+
+- [NodeJS](https://nodejs.org/en/docs/)
+
+> As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection, the callback is fired, but if there is no work to be done, Node.js will sleep.
+
+- [Text Editor(VScode Recommended)](https://code.visualstudio.com/)
+
+> Visual Studio Code is a free coding editor that helps you start coding quickly. Use it to code in any programming language, without switching editors.
+
+- [Web Browser(Google Chrome Recommended)](https://www.google.com/chrome/?brand=CHBD&brand=CHBD&gclid=Cj0KCQjwqoibBhDUARIsAH2OpWhDJExSRmbLyWolXNX3OYYy0ykn1Gb7xNytG5wWTWSIOVHgqsHIQtsaAvk7EALw_wcB&gclsrc=aw.ds)
+
 ## Author
 
-👤 **Author1**
+👤 **Haider Ahmad**
 
 - GitHub: [@Hidar37](https://github.com/Hidar37)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -23,7 +57,7 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
-- etc
+- etc.
 
 ## 📝 License
 
