@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,35 +9,41 @@
   <!-- Fontawesome cdn -->
   <script src="https://kit.fontawesome.com/27219c429c.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <main>
     <header>
-      <h4>Today's To Do <span id="recycle"><i class="fa-solid fa-arrow-rotate-left"></i></span></h4>
+      <h4>Today's To Do</h4>
+      <p id="recycle"><i class="fa-solid fa-arrow-rotate-left"></i></p>
     </header>
     <div class="task-wrapper">
       <form action="" method="GET" id="tast-form">
-        <input type="text" id="task" placeholder="Add to your list...">
-        <button id="enter-btn" class="btn"><i class="fa-solid fa-arrow-left-long"></i></button>
+        <div class="underline">
+          <input type="text" id="task" placeholder="Add to your list...">
+          <button id="enter-btn" class="btn"><i class="fa-solid fa-arrow-left-long change-color"></i></button>
+        </div>
         <!-- Task List -->
         <ul class="nav">
-          <li>
+          <li class="nav-item">
             <input type="checkbox" id="index">
             <p>wash the dishes</p>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <i class="fa-solid fa-ellipsis-vertical change-position"></i>
           </li>
-          <li>
+          <li class="nav-item">
             <input type="checkbox" id="index">
             <p>wash the dishes</p>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <i class="fa-solid fa-ellipsis-vertical change-position"></i>
           </li>
-          <li>
+          <li class="nav-item">
             <input type="checkbox" id="index">
             <p>wash the dishes</p>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <i class="fa-solid fa-ellipsis-vertical change-position"></i>
           </li>
         </ul>
       </form>
+      <button id="clear" class="btn">Clear all completed</button>
     </div>
   </main>
 </body>
+
 </html>
