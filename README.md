@@ -12,9 +12,8 @@
 
 ## Live Demo
 
-> coming soon :smile:
+> [Link](coming soon :smile:)
 
-[Link](Coming Soon)
 
 ## Setup&Install
 
