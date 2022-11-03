@@ -50,12 +50,23 @@ export default class ToDoList {
       const checkboxElement = document.createElement('input');
       checkboxElement.setAttribute('type', 'checkbox');
       checkboxElement.setAttribute('id', 'index'.concat(indexPosition));
-      const pElement = document.createElement('p');
+      const pElement = document.createElement('input');
+      pElement.setAttribute('type', 'text');
+      pElement.setAttribute('id', 'text-input-style');
       const removeBtn = document.createElement('i');
       removeBtn.setAttribute('class', 'change-position');
-      removeBtn.classList.add('fa-solid', 'fa-ellipsis-vertical');
-      // Adding textNode to Elements
-      pElement.appendChild(document.createTextNode(`${item.description}`));
+      removeBtn.classList.add('fa-solid', 'fa-trash-can');
+      // Setting the value of input
+      pElement.setAttribute('value', item.description);
+      // Updateing the Description.
+      pElement.addEventListener('focusout', () => {
+        if (pElement.value !== '') {
+          item.description = pElement.value;
+          localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+        } else {
+          pElement.value = item.description;
+        }
+      });
       // remove Button
       this.removeItem(this.toDoListArray, removeBtn, indexPosition, liElement);
       // 1- Append New Element to Parent node which is li.

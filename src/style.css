@@ -39,7 +39,8 @@ header #recycle {
   border-bottom: 1px solid #dfdfdf;
 }
 
-form input[type='text'] {
+form input[type='text'],
+#text-input-style {
   /* margin: 0.8rem; */
   width: 93%;
   padding: 1rem 1.2rem;
@@ -48,6 +49,10 @@ form input[type='text'] {
   font-style: italic;
   cursor: pointer;
   outline: none;
+}
+
+#text-input-style:focus {
+  background-color: #fff8c8;
 }
 
 #enter-btn {
@@ -96,6 +101,7 @@ ul.nav li.nav-item {
 }
 
 .nav-item .change-position:hover {
+  color: #808080;
   cursor: pointer;
 }
 
@@ -110,4 +116,11 @@ ul.nav li.nav-item {
   outline: none;
   padding: 0.8rem;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+#clear:hover {
+  background-color: #dfdfdf;
+  text-decoration: underline;
+  color: #808080;
 }
