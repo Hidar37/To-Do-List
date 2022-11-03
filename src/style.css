@@ -71,7 +71,7 @@ ul.nav li.nav-item {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 1.2rem;
+  padding: 0.3rem 1.2rem;
   position: relative;
   border-bottom: 1px solid #dfdfdf;
 }
