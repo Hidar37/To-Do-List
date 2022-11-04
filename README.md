@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-> [Link](coming soon :smile:)
+> [[Link](https://hidar37.github.io/To-Do-List/dist/)](:smile:)
 
 
 ## Setup&Install
