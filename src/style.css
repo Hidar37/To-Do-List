@@ -124,3 +124,7 @@ ul.nav li.nav-item {
   text-decoration: underline;
   color: #808080;
 }
+
+.completed-task {
+  background-color: red;
+}

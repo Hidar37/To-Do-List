@@ -12,3 +12,4 @@ variables.form.addEventListener('submit', (e) => {
   e.preventDefault();
   objToDoList.addItemToList(variables.toDoText.value);
 });
+objToDoList.clearCompletedTasks();
