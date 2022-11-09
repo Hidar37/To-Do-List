@@ -2,7 +2,7 @@
 
 # To Do List Project
 
-> This is simple to do list project. Using this project users can creaete a daily to do list. for now this project have the functionlity of adding, removing and edtiting items to the lest. [ NOTE: This project is not completed 100% upto now ].
+> This is simple to do list project. Using this project users can create a daily to do list. This project have the functionlity of adding, removing, edtiting and removeing the all completed task from the list.
 
 ## Built With
 
