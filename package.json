@@ -8,6 +8,9 @@
     "build": "webpack",
     "test": "jest"
   },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hidar37/To-Do-List.git"
@@ -41,6 +44,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "jest-environment-jsdom": "^29.3.1",
     "lodash": "^4.17.21"
   }
 }
