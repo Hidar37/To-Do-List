@@ -1,65 +1,145 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+<a name="readme-top"></a>
+<div align="center">
 
-# To Do List Project
+  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <br/>
+
+</div>
+
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [⭐️ Show your support](#support)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
+
+<!-- PROJECT DESCRIPTION -->
+
+# 📖 [To-Do-List] <a name="about-project"></a>
 
 > This is simple to do list project. Using this project users can create a daily to do list. This project have the functionlity of adding, removing, edtiting and removeing the all completed task from the list.
 
-## Built With
+## 🛠 Built With <a name="built-with"></a>
+  <ul>
+    <li><a href="https://reactjs.org/">HTML</a></li>
+    <li><a href="https://reactjs.org/">CSS</a></li>
+    <li><a href="https://reactjs.org/">JS</a></li>
+  </ul>
+<!-- Features -->
 
-- HTML
-- CSS
-- JS
+### Key Features <a name="key-features"></a>
 
-## Live Demo
+> Describe between 1-3 key features of the application.
+- **[Adding New Activity's]**
+- **[Deleting Activity]**
+- **[Fully Created with ES6]**
 
-> [[Project Live Demo Link](https://hidar37.github.io/To-Do-List/dist/)](🚀🚀🚀🚀🚀)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- LIVE DEMO -->
 
-## Setup&Install
+## 🚀 Live Demo <a name="live-demo">(https://hidar37.github.io/To-Do-List/dist/</a>
 
-`1- To have a copy of this project running on your local machine, follow these Steps:`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- Clone this repo to your local machine
-  - `https://github.com/Hidar37/To-Do-List.git`
-  - Open the folder "To-Do-List" and run `npm install` to install all necesary scripts,
-  - Run from your termminal, `npm start` to open the project in your browser.
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-- [NodeJS](https://nodejs.org/en/docs/)
+In order to run this project you need:
+- Node.js
+- Browser (any)
+- Working PC
 
-> As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection, the callback is fired, but if there is no work to be done, Node.js will sleep.
+### Setup
 
-- [Text Editor(VScode Recommended)](https://code.visualstudio.com/)
+- In order to Clone this repository to your PC please follow the below steps:
+ > copy this link [https://github.com/Hidar37/To-Do-List.git]
+ > Open your (cmd) or (git bash) and type [cd desktop] to change the directore and selec the desktop
+ > go to your (cmd) or (git bash) and type this commad [git clone <copy the repo link>] the repo will be save to your desktop.
 
-> Visual Studio Code is a free coding editor that helps you start coding quickly. Use it to code in any programming language, without switching editors.
+### Usage
 
-- [Web Browser(Google Chrome Recommended)](https://www.google.com/chrome/?brand=CHBD&brand=CHBD&gclid=Cj0KCQjwqoibBhDUARIsAH2OpWhDJExSRmbLyWolXNX3OYYy0ykn1Gb7xNytG5wWTWSIOVHgqsHIQtsaAvk7EALw_wcB&gclsrc=aw.ds)
+To run the project, execute the following command:
 
-## Author
+> Go to that downloaded folder and open the index.html file and your good to go.
 
-👤 **Haider Ahmad**
+### Run tests
+
+There is no testing available until now.
+
+### Deployment <a name="live-demo">(https://hidar37.github.io/To-Do-List/dist/</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors">Haider Ahamd & George M'sapenda</a>
+
+> Mention all of the collaborators of this project.
+👤 **Author1**
 
 - GitHub: [@Hidar37](https://github.com/Hidar37)
 
-## 🤝 Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Contributions, issues, and feature requests are welcome!
+<!-- FUTURE FEATURES -->
 
-Feel free to check the [issues page](../../issues/).
+## 🔭 Future Features <a name="future-features"></a>
 
-## Show your support
+> Describe 1 - 3 features you will add to the project.
+- [ ] **[Adding Database]**
+- [ ] **[Updateing Style]**
+- [ ] **[Creating Test cases]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc.
+<!-- FAQ (optional) -->
 
-## 📝 License
+## ❓ FAQ <a name="faq"></a>
 
-This project is [MIT](./MIT.md) licensed.
+> Add at least 2 questions new developers would ask when they decide to use your project.
+- **[How to install the node module in my project?]**
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+  - [type in your cmd or gitbash (npm install)]
+
+- **[How to clone this project to my local PC?]**
+
+  - [In the cmd or gitbash type (git clone <github_repo_link>)]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license">MIT</a>
+
+This project is [MIT](./LICENSE) licensed.
+
+NOTE: we recommend using the MIT license - you can set it up quickly by using templates available on GitHub. You can also use any other license if you wish.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
