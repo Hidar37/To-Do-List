@@ -123,19 +123,18 @@ export default class ToDoList {
 
   clearCompletedTasks = () => {
     clearBtn.addEventListener('click', () => {
-      // eslint-disable-next-line no-unused-vars
-      const filtering = this.toDoListArray.filter((arrayValue) => {
-        if (arrayValue.completed !== false) {
-          this.toDoListArray.splice(arrayValue.index, 1);
+      this.toDoListArray = this.toDoListArray.filter((haider) => {
+        let flag;
+        if (haider.completed === false) {
+          flag = haider;
           // reassigne index to array items
           this.toDoListArray.forEach((element, elementIndex) => {
             element.index = elementIndex;
           });
-          localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
-          return arrayValue.completed;
         }
-        return arrayValue.completed;
+        return flag;
       });
+      localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
       this.parentUl.innerHTML = '';
       this.showToDoList();
     });
