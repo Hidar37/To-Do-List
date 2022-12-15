@@ -36,6 +36,8 @@
     <li><a href="https://reactjs.org/">HTML</a></li>
     <li><a href="https://reactjs.org/">CSS</a></li>
     <li><a href="https://reactjs.org/">JS</a></li>
+    <li><a href="https://reactjs.org/">jest</a></li>
+    <li><a href="https://reactjs.org/">webPack</a></li>
   </ul>
 <!-- Features -->
 
@@ -90,12 +92,16 @@ There is no testing available until now.
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors">Haider Ahamd & George M'sapenda</a>
+## 👥 Authors <a name="authors">Haider Ahamd & Fahim-Khan</a>
 
 > Mention all of the collaborators of this project.
 👤 **Author1**
 
 - GitHub: [@Hidar37](https://github.com/Hidar37)
+
+👤 **Author2**
+
+- GitHub: [@Hidar37](https://github.com/Fahim-Khan-P)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
