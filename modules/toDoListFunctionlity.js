@@ -11,6 +11,7 @@ export default class ToDoList {
     return this.toDoListArray;
   };
 
+<<<<<<< HEAD
   addItemToList = (getToDoText) => {
     const ulElement = document.getElementById('nav');
     const myForm = document.getElementById('task-form');
@@ -18,6 +19,59 @@ export default class ToDoList {
       description: getToDoText,
       completed: false,
       index: this.toDoListArray.length,
+=======
+    addItemToList = (getToDoText) => {
+      const newItem = {
+        description: getToDoText,
+        completed: false,
+        index: this.toDoListArray.length,
+      };
+      this.toDoListArray.push(newItem);
+      this.listLenght += 1;
+
+      // Add to local Storage
+      localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+
+      // Empty input
+      toDoText.value = '';
+      ulElement.innerHTML = '';
+      this.showToDoList();
+    }
+
+    showToDoList = () => {
+      // Transfer All data from local Storage to [toDoListArray]
+      this.toDoListArray = JSON.parse(localStorage.getItem('toDoListItems'));
+
+      // Use to loop through given array and display all the item which is avilibly in given array.
+      this.toDoListArray.forEach((item, indexPosition) => {
+        const liElement = document.createElement('li');
+        liElement.setAttribute('class', 'nav-item');
+        liElement.setAttribute('id', 'id'.concat(item.index));
+        const checkboxElement = document.createElement('input');
+        checkboxElement.setAttribute('type', 'checkbox');
+        checkboxElement.setAttribute('id', 'index'.concat(indexPosition));
+        const pElement = document.createElement('input');
+        pElement.setAttribute('type', 'text');
+        pElement.setAttribute('id', 'text-input-style');
+        const removeBtn = document.createElement('i');
+        removeBtn.setAttribute('class', 'change-position');
+        removeBtn.classList.add('fa-solid', 'fa-trash-can');
+        // Setting the value of input
+        pElement.setAttribute('value', item.description);
+        // Updateing the Description.
+        this.editeInputText(pElement, item);
+        // Calling this function on load
+        this.checkBoxStatusOnLoad(item, checkboxElement, pElement);
+        // Adding event to checkbox
+        this.checkBoxStatusEvent(item, checkboxElement, pElement);
+        // remove Button
+        this.removeItem(this.toDoListArray, removeBtn, indexPosition, liElement);
+        // 1- Append New Element to Parent node which is li.
+        // 2- Append the li to ul.
+        liElement.append(checkboxElement, pElement, removeBtn);
+        this.parentUl.appendChild(liElement);
+      });
+>>>>>>> efec7160d2bfd0c3c39813a94c0ea0f00b9bf2bd
     };
     this.toDoListArray.push(newItem);
     this.listLenght += 1;

@@ -29,13 +29,14 @@
 
 # 📖 [To Do List] <a name="about-project"></a>
 
-> This is simple to do list project. Using this project users can create a daily to do list. This project have the functionlity of adding, removing, edtiting and removeing the all completed task from the list.
+> This is simple to do list project. Using this project users can create a daily to do list. This project have the functionlity of adding, removing, edtiting and removeing the all completed task from the list, we have added some tests to crud functions as well to test the works of functions using gist library and mock.
 
 ## 🛠 Built With <a name="built-with"></a>
   <ul>
     <li><a href="https://reactjs.org/">HTML</a></li>
     <li><a href="https://reactjs.org/">CSS</a></li>
     <li><a href="https://reactjs.org/">JS</a></li>
+    <li><a href="https://reactjs.org/">webPack</a></li>
   </ul>
 <!-- Features -->
 
