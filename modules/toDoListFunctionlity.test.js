@@ -26,12 +26,11 @@ describe('Adding: ', () => {
 </div>`;
 
   test('Item Added to LocalStorage, Array and DOM', () => {
-    expect(myList.addItemToList('Cleaning Car.')).toHaveLength(1);
-    expect(myList.addItemToList('Cleaning Car.')).toHaveLength(2);
+    expect(myList.addItemToList('Omar')).toHaveLength(1); // index -> 0
+    expect(myList.addItemToList('Haider')).toHaveLength(2); // index -> 1
     expect(checkLiInDOM(document.querySelectorAll('li'))).toHaveLength(2);
   });
 });
-
 // ======================================= Removing Item
 describe('Removing:', () => {
   const toDoList = [];
@@ -45,5 +44,58 @@ describe('Removing:', () => {
     expect(myList.removeItemTest(toDoList, removeBtn, 4, document.getElementById('id4'))).toHaveLength(4);
     expect(myList.removeItemTest(toDoList, removeBtn, 2, document.getElementById('id2'))).toHaveLength(3);
     expect(checkLiInDOM(document.querySelectorAll('li'))).toHaveLength(3);
+  });
+});
+// ======================================= Updateing Item
+describe('Update: ', () => {
+  test('Item Updated', () => {
+    const pElement = document.getElementById('text-input-style-1');
+    let pElementValue = pElement.value;
+    let newItem = {
+      description: pElementValue,
+      completed: false,
+      index: 1,
+    };
+    expect(myList.editeInputTextTest(pElement, 'Osman', newItem, 1)).toMatch('Osman'); // change Haider to Osman
+
+    const pElemen1 = document.getElementById('text-input-style-0');
+    pElementValue = pElemen1.value;
+    newItem = {
+      description: pElementValue,
+      completed: false,
+      index: 0,
+    };
+    expect(myList.editeInputTextTest(pElemen1, 'Tawfiq', newItem, 0)).toMatch('Tawfiq'); // Change Omar to Tawfiq
+  });
+});
+// ======================================= Checkbox Event [True/False]
+describe('Update Complete Status: ', () => {
+  test('Status Updated', () => {
+    const checkboxElement = document.getElementById('index1');
+    const pElement = document.getElementById('text-input-style-1');
+    const pElementValue = pElement.value;
+    const newItem = {
+      description: pElementValue,
+      completed: false,
+      index: 1,
+    };
+    expect(myList.checkBoxStatusEventTest(newItem, checkboxElement, pElement, 1)).toBeTruthy();
+
+    const checkboxElement1 = document.getElementById('index0');
+    const pElement1 = document.getElementById('text-input-style-0');
+    const pElementValue1 = pElement1.value;
+    const newItem1 = {
+      description: pElementValue1,
+      completed: false,
+      index: 0,
+    };
+    expect(myList.checkBoxStatusEventTest(newItem1, checkboxElement1, pElement1, 0)).toBeTruthy();
+    expect(myList.checkBoxStatusEventTest(newItem, checkboxElement, pElement, 1)).toBeFalsy();
+  });
+});
+// =========================================== Clear All Functionality Test Cases
+describe('Clear All functionality: ', () => {
+  test('items cleared from list.', () => {
+    expect(myList.clearCompletedTasksTest()).toHaveLength(2);
   });
 });
