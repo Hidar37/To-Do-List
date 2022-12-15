@@ -1,4 +1,4 @@
-import { toDoText, ulElement, clearBtn } from './values.js';
+import { clearBtn } from './values.js';
 
 export default class ToDoList {
   constructor(parentUl) {
@@ -12,6 +12,8 @@ export default class ToDoList {
   }
 
   addItemToList = (getToDoText) => {
+    const ulElement = document.getElementById('nav');
+    const myForm = document.getElementById('task-form');
     const newItem = {
       description: getToDoText,
       completed: false,
@@ -22,12 +24,14 @@ export default class ToDoList {
     // Add to local Storage
     localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
     // Empty input
-    toDoText.value = '';
+    myForm.reset();
     ulElement.innerHTML = '';
     this.showToDoList();
+    return this.toDoListArray;
   }
 
   showToDoList = () => {
+    const parentUl = document.getElementById('nav');
     // Transfer All data from local Storage to [toDoListArray]
     this.toDoListArray = JSON.parse(localStorage.getItem('toDoListItems'));
     // Use to loop through given array and display all the item which is avilibly in given array.
@@ -40,7 +44,8 @@ export default class ToDoList {
       checkboxElement.setAttribute('id', 'index'.concat(indexPosition));
       const pElement = document.createElement('input');
       pElement.setAttribute('type', 'text');
-      pElement.setAttribute('id', 'text-input-style');
+      pElement.setAttribute('id', 'text-input-style-'.concat(indexPosition));
+      pElement.setAttribute('class', 'unique');
       const removeBtn = document.createElement('i');
       removeBtn.setAttribute('class', 'change-position');
       removeBtn.classList.add('fa-solid', 'fa-trash-can');
@@ -57,19 +62,20 @@ export default class ToDoList {
       // 1- Append New Element to Parent node which is li.
       // 2- Append the li to ul.
       liElement.append(checkboxElement, pElement, removeBtn);
-      this.parentUl.appendChild(liElement);
+      parentUl.appendChild(liElement);
     });
   };
 
-  editeInputText = (inputTextAddress, arrayDescription) => {
-    inputTextAddress.addEventListener('focusout', () => {
-      if (inputTextAddress.value !== '') {
-        arrayDescription.description = inputTextAddress.value;
-        localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
-      } else {
-        inputTextAddress.value = arrayDescription.description;
-      }
-    });
+  editeInputTextTest = (inputTextAddress, inputTextValue, arrayDescription, elementIndexs) => {
+    if (inputTextAddress.value !== '') {
+      arrayDescription.description = inputTextValue;
+      inputTextAddress.value = inputTextValue;
+      this.toDoListArray[elementIndexs] = arrayDescription;
+      localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+    } else {
+      inputTextAddress.value = arrayDescription.description;
+    }
+    return inputTextAddress.value;
   }
 
   checkBoxStatusOnLoad = (updateStatusArray, checkboxAddress, textInputAddress) => {
@@ -85,6 +91,84 @@ export default class ToDoList {
       textInputAddress.style.color = '#000';
       updateStatusArray.completed = false;
     }
+  }
+
+  // eslint-disable-next-line max-len
+  checkBoxStatusEventTest = (updateStatusArray, checkboxAddress, textInputAddress, statusObjAddress) => {
+    if (updateStatusArray.completed === false) {
+      checkboxAddress.setAttribute('class', 'completed-task');
+      checkboxAddress.setAttribute('checked', 'checked');
+      textInputAddress.style.textDecoration = 'line-through';
+      textInputAddress.style.color = '#999';
+      updateStatusArray.completed = true;
+      this.toDoListArray[statusObjAddress] = updateStatusArray;
+      localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+      return updateStatusArray.completed;
+    }
+    checkboxAddress.removeAttribute('checked');
+    checkboxAddress.removeAttribute('class');
+    textInputAddress.style.textDecoration = 'none';
+    textInputAddress.style.color = '#000';
+    updateStatusArray.completed = false;
+    this.toDoListArray[statusObjAddress] = updateStatusArray;
+    localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+    return updateStatusArray.completed;
+  }
+
+  removeItemTest = (arrayDoToList, btnAddress, itemIndexPosition, liAddress) => {
+    // Use to create event Listener for each passen btn.
+    this.toDoListArray.splice(itemIndexPosition, 1);
+    // reassigne index to array items
+    arrayDoToList.forEach((element, elementIndex) => {
+      element.index = elementIndex;
+    });
+    localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+    liAddress.remove();
+    return this.toDoListArray;
+  }
+
+  clearCompletedTasksTest = () => {
+    const ulElement = document.getElementById('nav');
+    this.toDoListArray = this.toDoListArray.filter((filterItem) => {
+      let flag;
+      if (filterItem.completed === false) {
+        flag = filterItem;
+        // reassigne index to array items
+        this.toDoListArray.forEach((element, elementIndex) => {
+          element.index = elementIndex;
+        });
+      }
+      return flag;
+    });
+    localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+    ulElement.innerHTML = '';
+    this.showToDoList();
+    return this.toDoListArray;
+  }
+
+  removeItem = (arrayDoToList, btnAddress, itemIndexPosition, liAddress) => {
+    // Use to create event Listener for each passen btn.
+    btnAddress.addEventListener('click', () => {
+      this.toDoListArray.splice(itemIndexPosition, 1);
+      // reassigne index to array items
+      arrayDoToList.forEach((element, elementIndex) => {
+        element.index = elementIndex;
+      });
+      localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+      liAddress.remove();
+      window.location.reload();
+    });
+  }
+
+  editeInputText = (inputTextAddress, arrayDescription) => {
+    inputTextAddress.addEventListener('focusout', () => {
+      if (inputTextAddress.value !== '') {
+        arrayDescription.description = inputTextAddress.value;
+        localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+      } else {
+        inputTextAddress.value = arrayDescription.description;
+      }
+    });
   }
 
   checkBoxStatusEvent = (updateStatusArray, checkboxAddress, textInputAddress) => {
@@ -107,35 +191,20 @@ export default class ToDoList {
     });
   }
 
-  removeItem = (arrayDoToList, btnAddress, itemIndexPosition, liAddress) => {
-    // Use to create event Listener for each passen btn.
-    btnAddress.addEventListener('click', () => {
-      this.toDoListArray.splice(itemIndexPosition, 1);
-      // reassigne index to array items
-      arrayDoToList.forEach((element, elementIndex) => {
-        element.index = elementIndex;
-      });
-      localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
-      liAddress.remove();
-      window.location.reload();
-    });
-  }
-
   clearCompletedTasks = () => {
     clearBtn.addEventListener('click', () => {
-      // eslint-disable-next-line no-unused-vars
-      const filtering = this.toDoListArray.filter((arrayValue) => {
-        if (arrayValue.completed !== false) {
-          this.toDoListArray.splice(arrayValue.index, 1);
+      this.toDoListArray = this.toDoListArray.filter((filterItem) => {
+        let flag;
+        if (filterItem.completed === false) {
+          flag = filterItem;
           // reassigne index to array items
           this.toDoListArray.forEach((element, elementIndex) => {
             element.index = elementIndex;
           });
-          localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
-          return arrayValue.completed;
         }
-        return arrayValue.completed;
+        return flag;
       });
+      localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
       this.parentUl.innerHTML = '';
       this.showToDoList();
     });
