@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1671126309800" clover="3.2.0">
-  <project timestamp="1671126309801" name="All files">
+<coverage generated="1671126899874" clover="3.2.0">
+  <project timestamp="1671126899874" name="All files">
     <metrics statements="141" coveredstatements="100" conditionals="14" coveredconditionals="6" methods="24" coveredmethods="14" elements="179" coveredelements="120" complexity="0" loc="141" ncloc="141" packages="1" files="2" classes="2"/>
     <file name="toDoListFunctionlity.js" path="C:\Users\Dell\Desktop\To-Do-List\modules\toDoListFunctionlity.js">
       <metrics statements="136" coveredstatements="95" conditionals="14" coveredconditionals="6" methods="24" coveredmethods="14"/>

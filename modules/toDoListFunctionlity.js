@@ -147,7 +147,7 @@ export default class ToDoList {
     }
 
     removeItem = (arrayDoToList, btnAddress, itemIndexPosition, liAddress) => {
-      // Use to create event Listener for each passen btn.
+      // Use to create event Listener for each passen btn
       btnAddress.addEventListener('click', () => {
         this.toDoListArray.splice(itemIndexPosition, 1);
         // reassigne index to array items
