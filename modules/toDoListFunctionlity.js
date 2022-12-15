@@ -19,8 +19,10 @@ export default class ToDoList {
       };
       this.toDoListArray.push(newItem);
       this.listLenght += 1;
+
       // Add to local Storage
       localStorage.setItem('toDoListItems', JSON.stringify(this.toDoListArray));
+
       // Empty input
       toDoText.value = '';
       ulElement.innerHTML = '';
@@ -30,6 +32,7 @@ export default class ToDoList {
     showToDoList = () => {
       // Transfer All data from local Storage to [toDoListArray]
       this.toDoListArray = JSON.parse(localStorage.getItem('toDoListItems'));
+      
       // Use to loop through given array and display all the item which is avilibly in given array.
       this.toDoListArray.forEach((item, indexPosition) => {
         const liElement = document.createElement('li');
